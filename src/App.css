@@ -10,10 +10,13 @@
 }
 
 .card {
+  border-radius: 3px;
   width: 350px;
   text-align: center;
   margin: 50px auto 0;
   padding: 7px;
+  background-color: #3e3e40;
+  box-shadow: #3e3e40 4px 4px 10px
 }
 
 .bg-dark {
@@ -49,4 +52,8 @@
   border: none;
   font-size: 25px;
   cursor: pointer;
+}
+.boton-carta:hover {
+  transform: scale(1.1);
+  transition: all 0.1s ease-in-out;
 }

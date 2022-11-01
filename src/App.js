@@ -30,7 +30,7 @@ function App() {
   };
 
   return (
-    <div className="card bg-dark">
+    <div className="card">
       <CategoriaImagen categoria={data[indiceCarousel].category.toUpperCase()} imagen={data[indiceCarousel].image} />
       {mostrarContenido ? (
         <div>
