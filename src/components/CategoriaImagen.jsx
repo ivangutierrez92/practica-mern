@@ -4,8 +4,8 @@ export default function TituloImagen(props) {
   let { categoria, imagen } = props;
   return (
     <>
-      <h2>{categoria}</h2>
-      <img src={imagen} alt={categoria} />
+      <h2 className="titulo bg-light">{categoria}</h2>
+      <img className="picture" src={imagen} alt={categoria} />
     </>
   );
 }

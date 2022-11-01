@@ -30,21 +30,27 @@ function App() {
   };
 
   return (
-    <div class="card">
+    <div className="card bg-dark">
       <CategoriaImagen categoria={data[indiceCarousel].category.toUpperCase()} imagen={data[indiceCarousel].image} />
-      <div>
-        <BotonCarta contenido="◄" onClick={prev} />
-        <BotonCarta contenido={mostrarContenido ? "▲" : "	▼"} onClick={hide} />
-        <BotonCarta contenido="►" onClick={next} />
-      </div>
       {mostrarContenido ? (
         <div>
           <Dato contenido={data[indiceCarousel].name} />
-          <Dato contenido={data[indiceCarousel].description} />
+          <Dato
+            contenido={
+              data[indiceCarousel].description.length > 65
+                ? `${data[indiceCarousel].description.slice(0, 65)}...`
+                : data[indiceCarousel].description
+            }
+          />
         </div>
       ) : (
         <></>
       )}
+      <div className="contenedor-botones">
+        <BotonCarta contenido="◄" onClick={prev} />
+        <BotonCarta contenido={mostrarContenido ? "▲" : "▼"} onClick={hide} />
+        <BotonCarta contenido="►" onClick={next} />
+      </div>
     </div>
   );
 }
